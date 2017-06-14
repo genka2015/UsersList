@@ -6,6 +6,6 @@ import retrofit2.http.GET;
 
 public interface RetrofitService {
 
-    @GET("api")
+    @GET("api/?results=20")
     Call<RandomAPI> getRandomUser();
 }

@@ -15,6 +15,7 @@ public class User implements Parcelable{
     private String dob;
     private String nat;
     private String registered;
+    private String image;
 
     public User(){
 
@@ -31,7 +32,7 @@ public class User implements Parcelable{
         }
     };
 
-    public User(String n, String a, String e, String gen, String p, String c, String d, String nationality, String reg){
+    public User(String n, String a, String e, String gen, String p, String c, String d, String nationality, String reg, String img){
         name = n;
         address = a;
         email = e;
@@ -41,7 +42,7 @@ public class User implements Parcelable{
         dob = d;
         nat = nationality;
         registered = reg;
-
+        image = img;
     }
 
     private User(Parcel in) {
@@ -54,7 +55,7 @@ public class User implements Parcelable{
         dob = in.readString();
         nat = in.readString();
         registered = in.readString();
-
+        image = in.readString();
     }
 
     public String getGender() {
@@ -129,6 +130,13 @@ public class User implements Parcelable{
         return email;
     }
 
+    public void setImage(String image){
+        this.image = image;
+    }
+
+    public String getImage(){
+        return image;
+    }
 
     @Override
     public int describeContents() {
@@ -148,6 +156,6 @@ public class User implements Parcelable{
         dest.writeString(dob);
         dest.writeString(nat);
         dest.writeString(registered);
-
+        dest.writeString(image);
     }
 }

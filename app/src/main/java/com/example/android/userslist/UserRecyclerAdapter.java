@@ -6,15 +6,24 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapter.ViewHolder>{
+public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapter.ViewHolder> {
 
     private ArrayList<User> users;
     private Context context;
+    ItemClickListener mItemClickListener;
+
+    public UserRecyclerAdapter(ArrayList<User> users, Context context) {
+        this.users = users;
+        this.context = context;
+    }
+
+    public interface ItemClickListener{
+        void onItemClick(View view, int position);
+    }
 
     @Override
     public UserRecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -28,8 +37,7 @@ public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapte
     public void onBindViewHolder(UserRecyclerAdapter.ViewHolder holder, int position) {
 
         User currentUser = users.get(position);
-        //holder.userImageView.setImageResource(R.drawable.img_user);
-        holder.userTV.setText(currentUser.getName() + " " + currentUser.getAddress() + currentUser.getEmail());
+        holder.userTV.setText(currentUser.getName());
     }
 
     @Override
@@ -37,15 +45,26 @@ public class UserRecyclerAdapter extends RecyclerView.Adapter<UserRecyclerAdapte
         return users.size();
     }
 
-    public class ViewHolder extends  RecyclerView.ViewHolder{
+
+    public class ViewHolder extends  RecyclerView.ViewHolder implements View.OnClickListener{
         TextView userTV;
-        ImageView userImageView;
 
         public ViewHolder(View itemView){
             super(itemView);
-            userImageView =(ImageView)itemView.findViewById(R.id.img_user);
             userTV = (TextView)itemView.findViewById(R.id.tv_names);
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            if(mItemClickListener != null){
+                mItemClickListener.onItemClick(v, getAdapterPosition());
+            }
+        }
+    }
+
+    public void setClickListener(ItemClickListener listener){
+        this.mItemClickListener = listener;
     }
 
 }
