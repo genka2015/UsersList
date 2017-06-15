@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.android.userslist.Entities.User;
@@ -30,7 +31,7 @@ public class ViewUserActivity extends AppCompatActivity implements UserContract.
 
     @Override
     public void showErrorMessage() {
-
+        Toast.makeText(this, "ABANDON THE SHIP!", Toast.LENGTH_SHORT).show();
     }
 
     @Override
