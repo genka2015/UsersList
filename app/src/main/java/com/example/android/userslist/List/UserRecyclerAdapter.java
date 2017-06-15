@@ -1,4 +1,4 @@
-package com.example.android.userslist;
+package com.example.android.userslist.List;
 
 
 import android.content.Context;
@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.android.userslist.Entities.User;
+import com.example.android.userslist.R;
 
 import java.util.ArrayList;
 

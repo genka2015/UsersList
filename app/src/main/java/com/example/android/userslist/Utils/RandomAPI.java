@@ -1,6 +1,8 @@
 
-package com.example.android.userslist;
+package com.example.android.userslist.Utils;
 
+import com.example.android.userslist.Entities.Info;
+import com.example.android.userslist.Entities.Result;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

@@ -1,4 +1,4 @@
-package com.example.android.userslist;
+package com.example.android.userslist.Utils;
 
 
 import retrofit2.Call;

@@ -1,7 +1,12 @@
 package com.example.android.userslist;
 
 
-import org.junit.After;
+import com.example.android.userslist.Entities.User;
+import com.example.android.userslist.List.UserListContract;
+import com.example.android.userslist.List.UserListPresenter;
+import com.example.android.userslist.Utils.RandomAPI;
+import com.example.android.userslist.Utils.RetrofitService;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
@@ -17,7 +22,6 @@ import retrofit2.Call;
 import retrofit2.Response;
 
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
 
 public class UsersPresenterTest {
@@ -28,7 +32,7 @@ public class UsersPresenterTest {
     @Mock
             UserListContract.View view;
     @Mock
-            RetrofitService service;
+    RetrofitService service;
     @Mock
     Call<RandomAPI> call;
     @Mock

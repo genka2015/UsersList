@@ -1,15 +1,16 @@
-package com.example.android.userslist;
+package com.example.android.userslist.List;
 
 import android.content.Intent;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
+
+import com.example.android.userslist.Entities.User;
+import com.example.android.userslist.R;
+import com.example.android.userslist.Utils.RetrofitService;
+import com.example.android.userslist.SingleUser.ViewUserActivity;
 
 import java.util.ArrayList;
 
@@ -38,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements UserRecyclerAdapt
 
         userList = new ArrayList<>();
 
-        //doRetrofitNetworkCall();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RETROFIT_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -46,8 +46,6 @@ public class MainActivity extends AppCompatActivity implements UserRecyclerAdapt
         service = retrofit.create(RetrofitService.class);
         presenter = new UserListPresenter(this,service);
         presenter.downloadList();
-        //userList = presenter.getMyList();
-        //displayList(userList);
     }
 
     @Override

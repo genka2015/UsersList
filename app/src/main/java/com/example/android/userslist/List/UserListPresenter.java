@@ -1,10 +1,15 @@
-package com.example.android.userslist;
+package com.example.android.userslist.List;
 
 
 import java.util.ArrayList;
 
 import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
 import android.util.Log;
+
+import com.example.android.userslist.Entities.Result;
+import com.example.android.userslist.Entities.User;
+import com.example.android.userslist.Utils.RandomAPI;
+import com.example.android.userslist.Utils.RetrofitService;
 
 public class UserListPresenter implements UserListContract.Presenter{
 

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="16dp"
-    tools:context="com.example.android.userslist.MainActivity">
+    tools:context="com.example.android.userslist.List.MainActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler"

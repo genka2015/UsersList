@@ -1,5 +1,5 @@
 
-package com.example.android.userslist;
+package com.example.android.userslist.Entities;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

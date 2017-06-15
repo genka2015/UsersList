@@ -1,4 +1,4 @@
-package com.example.android.userslist;
+package com.example.android.userslist.Entities;
 
 import android.os.Parcel;
 import android.os.Parcelable;
